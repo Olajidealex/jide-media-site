@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import ImageSlot from "./ImageSlot";
 
 type Service = {
   n: string;
@@ -98,15 +97,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div
-          className="svc-layout"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1.35fr 0.65fr",
-            gap: 48,
-            alignItems: "start",
-          }}
-        >
+        <div className="svc-layout">
           <div>
             {services.map((s, i) => {
               const on = active === i;
@@ -199,35 +190,6 @@ export default function Services() {
                 </div>
               );
             })}
-          </div>
-
-          <div
-            className="svc-thumb"
-            style={{
-              position: "relative",
-              aspectRatio: "4 / 5",
-              borderRadius: 16,
-              overflow: "hidden",
-            }}
-          >
-            {services.map((s, i) => (
-              <ImageSlot
-                key={s.id}
-                id={s.id}
-                shape="rounded"
-                radius={16}
-                placeholder={s.title}
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  width: "100%",
-                  height: "100%",
-                  opacity: active === i ? 1 : 0,
-                  transition: "opacity .3s ease",
-                  pointerEvents: active === i ? "auto" : "none",
-                }}
-              />
-            ))}
           </div>
         </div>
       </div>

@@ -2,11 +2,12 @@
 
 import type { ReactNode } from "react";
 
-type Social = { label: string; svg: ReactNode };
+type Social = { label: string; href: string; svg: ReactNode };
 
 const socials: Social[] = [
   {
     label: "Instagram",
+    href: "https://www.instagram.com/jidemedia/",
     svg: (
       <svg
         width="17"
@@ -25,24 +26,8 @@ const socials: Social[] = [
     ),
   },
   {
-    label: "Facebook",
-    svg: (
-      <svg
-        width="17"
-        height="17"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-      </svg>
-    ),
-  },
-  {
     label: "LinkedIn",
+    href: "https://www.linkedin.com/company/jide-media/",
     svg: (
       <svg
         width="17"
@@ -208,7 +193,9 @@ export default function CTAFooter({ onBookAudit }: CTAFooterProps) {
                 {socials.map((s) => (
                   <a
                     key={s.label}
-                    href="#"
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     aria-label={s.label}
                     style={{
                       width: 40,
