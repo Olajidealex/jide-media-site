@@ -133,10 +133,11 @@ export default function Results() {
               />
               <div
                 style={{
-                  padding: 40,
+                  padding: "clamp(24px, 4vw, 40px)",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
+                  minWidth: 0,
                 }}
               >
                 <div
@@ -168,7 +169,7 @@ export default function Results() {
                 <div
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "repeat(3, 1fr)",
+                    gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
                     gap: 16,
                     marginBottom: 30,
                     paddingBottom: 28,
@@ -176,17 +177,19 @@ export default function Results() {
                   }}
                 >
                   {c.stats.map((s) => (
-                    <div key={s.label}>
+                    <div key={s.label} style={{ minWidth: 0 }}>
                       <div
                         style={{
                           fontFamily: "var(--font-mono)",
-                          fontSize: 24,
+                          fontSize: "clamp(16px, 3.6vw, 24px)",
                           fontWeight: 700,
                           color:
                             s.accent === "f"
                               ? "var(--fuchsia-400)"
                               : "var(--cyan-300)",
                           marginBottom: 4,
+                          overflowWrap: "break-word",
+                          wordBreak: "break-word",
                         }}
                       >
                         {s.value}
@@ -208,10 +211,11 @@ export default function Results() {
                   style={{
                     fontFamily: "var(--font-display)",
                     fontWeight: 500,
-                    fontSize: 18,
+                    fontSize: "clamp(15px, 2.2vw, 18px)",
                     lineHeight: 1.5,
                     color: "#fff",
                     margin: "0 0 20px",
+                    overflowWrap: "break-word",
                   }}
                 >
                   &ldquo;{c.quote}&rdquo;
