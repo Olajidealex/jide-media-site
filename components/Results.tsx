@@ -9,6 +9,7 @@ type CaseStudy = {
   name: string;
   role: string;
   stats: Stat[];
+  src: string;
 };
 
 const cases: CaseStudy[] = [
@@ -25,6 +26,7 @@ const cases: CaseStudy[] = [
       { label: "Blended ROAS", value: "2.1→3.9x", accent: "c" },
       { label: "Window", value: "90 days", accent: "f" },
     ],
+    src: "/assets/slots/case-1.webp",
   },
   {
     id: "case-2",
@@ -39,6 +41,7 @@ const cases: CaseStudy[] = [
       { label: "Monthly spend", value: "2x", accent: "f" },
       { label: "Ads / month", value: "24", accent: "c" },
     ],
+    src: "/assets/slots/case-2.webp",
   },
 ];
 
@@ -118,6 +121,8 @@ export default function Results() {
                 shape="rounded"
                 radius={0}
                 placeholder="Case study visual"
+                src={c.src}
+                alt={c.title}
                 className="case-img"
                 style={{
                   width: "100%",

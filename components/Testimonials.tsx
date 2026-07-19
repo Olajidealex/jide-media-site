@@ -3,13 +3,14 @@ import ImageSlot from "./ImageSlot";
 
 type Quote = { id: string; quote: string; name: string; role: string };
 
-const quotes: Quote[] = [
+const quotes: (Quote & { src: string })[] = [
   {
     id: "tm-1",
     quote:
       "The audit alone was worth the call. They found three structural issues our last agency missed entirely.",
     name: "Michael Adedeji",
     role: "CMO, MAREA",
+    src: "/assets/slots/tm-1.webp",
   },
   {
     id: "tm-2",
@@ -17,6 +18,7 @@ const quotes: Quote[] = [
       "We finally have a creative pipeline instead of scrambling every two weeks. That’s the whole game on TikTok.",
     name: "Tom Whitfield",
     role: "Founder, RIPTIDE",
+    src: "/assets/slots/tm-2.webp",
   },
   {
     id: "tm-3",
@@ -24,6 +26,7 @@ const quotes: Quote[] = [
       "Spend doubled, ROAS held. I stopped checking Ads Manager at midnight. That’s the number that matters.",
     name: "Lena Park",
     role: "VP Growth, HÜXLEY",
+    src: "/assets/slots/tm-3.webp",
   },
 ];
 
@@ -114,6 +117,8 @@ export default function Testimonials() {
                   id={q.id}
                   shape="circle"
                   placeholder="Photo"
+                  src={q.src}
+                  alt={q.name}
                   style={{ width: 48, height: 48, flexShrink: 0 }}
                 />
                 <div>

@@ -43,10 +43,10 @@ function TrustStat({ value, label, mono = true }: TrustStatProps) {
 
 export default function Hero({ onBookAudit }: HeroProps) {
   const avatars = [
-    { id: "hero-av-1", top: "14%", left: "14%", size: 92, ph: "Founder" },
-    { id: "hero-av-2", top: "8%", left: "76%", size: 78, ph: "Buyer" },
-    { id: "hero-av-3", top: "58%", left: "20%", size: 84, ph: "Creative" },
-    { id: "hero-av-4", top: "52%", left: "80%", size: 96, ph: "Client" },
+    { id: "hero-av-1", top: "14%", left: "14%", size: 92, ph: "Founder", src: "/assets/slots/hero-av-1.webp" },
+    { id: "hero-av-2", top: "8%", left: "76%", size: 78, ph: "Buyer", src: "/assets/slots/hero-av-2.webp" },
+    { id: "hero-av-3", top: "58%", left: "20%", size: 84, ph: "Creative", src: "/assets/slots/hero-av-3.webp" },
+    { id: "hero-av-4", top: "52%", left: "80%", size: 96, ph: "Client", src: "/assets/slots/hero-av-4.webp" },
   ];
 
   return (
@@ -131,6 +131,7 @@ export default function Hero({ onBookAudit }: HeroProps) {
               id={a.id}
               shape="circle"
               placeholder={a.ph}
+              src={a.src}
               className="hero-avatar"
               style={{
                 position: "absolute",
